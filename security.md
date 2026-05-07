@@ -9,20 +9,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in this project, please **do not open a public GitHub issue**. Public disclosure before a fix is available puts users at risk.
-
-Instead, report it privately:
-
-**Email:** [your-security-email@example.com]
-**Subject line:** `[SECURITY] rsc-m365-storage – <brief description>`
-
-Please include:
-- A description of the vulnerability and its potential impact
-- Steps to reproduce or a proof-of-concept (if safe to share)
-- The version or commit hash you tested against
-- Any suggested remediation, if you have one
-
-You can expect an acknowledgment within **3 business days** and a status update within **10 business days**.
+If you discover a security vulnerability in this project, please ** open a public GitHub issue**. 
 
 ## Scope
 
