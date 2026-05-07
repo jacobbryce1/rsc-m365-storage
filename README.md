@@ -1,44 +1,56 @@
-# RSC M365 Licensing Compliance & Storage Report
+# 📊 RSC M365 Licensing Compliance & Storage Report
 
-Retrieves Microsoft 365 backup licensing and storage consumption data from Rubrik Security Cloud (RSC) via the GraphQL API. Produces a comprehensive compliance and trending report.
+Automated Microsoft 365 backup licensing compliance and storage consumption reporting via the Rubrik Security Cloud (RSC) GraphQL API. Designed for environments from single-org to multi-org M365 tenants managed through RSC.
 
----
-
-## Security Review Summary (v2.1 — May 2026)
-
-This codebase was reviewed against four industry security frameworks. The table below lists identified gaps and their remediation status in this release.
-
-| # | Framework | Control Area | Finding | Severity | Status |
-|---|-----------|-------------|---------|----------|--------|
-| 1 | OWASP Top 10 (A02 – Cryptographic Failures) | TLS Verification | `requests.post()` calls lacked explicit `verify=` parameter; a misconfigured `REQUESTS_CA_BUNDLE` env var could silently disable TLS validation | **High** | ✅ Fixed — `verify=True` (system CAs) enforced by default; override only via `RSC_CA_BUNDLE` env var |
-| 2 | OWASP Top 10 (A07 – ID & Auth Failures) | Credential Validation | `os.getenv()` returned `None` silently; credentials could be `None` without error, leading to unauthenticated API calls | **High** | ✅ Fixed — `require_env()` helper exits with a clear message on missing vars |
-| 3 | OWASP Top 10 (A05 – Security Misconfiguration) | URL Validation | `RSC_URL` accepted any string including `http://` URLs or attacker-controlled hosts | **High** | ✅ Fixed — `validate_rsc_url()` enforces HTTPS and `*.my.rubrik.com` domain pattern |
-| 4 | NIST CSF (PR.DS-1) / CIS Control 3 | Sensitive Data in Logs | Org names, token values, and error messages could expose credential fragments via stack traces | **Medium** | ✅ Fixed — `logging` module used; token/secret never logged; error messages sanitized |
-| 5 | NIST CSF (PR.DS-2) | Output Data Classification | `output/` directory not reliably created; `os.makedirs` missing `exist_ok=True` risked race condition crash | **Low** | ✅ Fixed — `os.makedirs("output", exist_ok=True)` added before Excel write |
-| 6 | CIS Control 4 (Secure Config) / OWASP A03 | Dependency Pinning | `requirements.txt` used only lower-bound pins (`>=`) with no upper bounds or hash verification; transitive deps (`urllib3`, `certifi`) not listed | **Medium** | ✅ Fixed — explicit `urllib3` and `certifi` entries added; versions updated to 2026 stable |
-| 7 | OWASP Top 10 (A09 – Logging Failures) | Error Handling | `requests.post()` had no `.raise_for_status()` call; HTTP 401/403 silently returned `None` data | **High** | ✅ Fixed — `raise_for_status()` added; `SSLError`, `Timeout`, `ConnectionError` caught and re-raised with clean messages |
-| 8 | NIST CSF (PR.DS-5) / CIS Control 13 | Data Protection | `output/*.docx` not excluded in `.gitignore`; reports with sensitive org data could be accidentally committed | **Medium** | ✅ Fixed — `output/*.docx`, `output/*.pdf`, `output/*.log` added to `.gitignore` |
-| 9 | OWASP Top 10 (A03 – Injection) | KeyError / AttributeError | Nested dict access via `data["key"]["nested"]` throughout report would `KeyError`-crash on any unexpected API response shape | **Medium** | ✅ Fixed — `safe_get()` helper added; all nested dict access uses defensive traversal |
-| 10 | CIS Control 16 (Application Security) | Error Messages | `auth.py` (inferred) — exception strings could leak client_id or URL fragments | **Medium** | ✅ Fixed — `src/auth.py` rewritten with sanitized exception messages |
+> **Not affiliated with Rubrik.** This is an independent, community-built tool. See [Legal & Disclaimer](#legal--disclaimer) for details.
 
 ---
 
-## What It Does
+## Overview
 
-- **License Compliance**: Shows entitled vs consumed for User Licenses and Data Protection Capacity (DPC)
-- **Monthly User Trending**: Protected mailboxes, OneDrives, SharePoint sites, Teams over 12 months
-- **Monthly DPC by Workload**: Data transferred per workload type (Exchange, OneDrive, SharePoint, Teams)
-- **Growth Analysis**: User growth rate, DPC growth rate, monthly average, annual projection
-- **Physical Storage**: 10-day backend storage trend with dedup efficiency
+This tool connects to your RSC instance, retrieves M365 backup licensing and storage data, and produces a comprehensive compliance and trending report — surfacing license overages, consumption trends, and growth projections as a timestamped Excel workbook with console summary output.
+
+**v2.1** introduces a full security hardening pass reviewed against OWASP Top 10, NIST CSF 2.0, CIS Controls v8, and MITRE ATT&CK. See [Security](#security) for details.
+
+---
+
+## Features
+
+| Feature | Details |
+|---------|---------|
+| 📋 **License compliance** | Entitled vs consumed for User Licenses and Data Protection Capacity (DPC) |
+| 📅 **Monthly user trending** | Protected mailboxes, OneDrives, SharePoint sites, and Teams over 12 months |
+| 💾 **DPC by workload type** | Data transferred per workload (Exchange, OneDrive, SharePoint, Teams) |
+| 📈 **Growth analysis** | User growth rate, DPC growth rate, monthly average, annual projection |
+| 🗄️ **Physical storage trend** | 10-day backend storage with dedup efficiency |
+| 🏢 **Multi-org support** | Aggregates consumption across all M365 organizations in your RSC tenant |
+| 📥 **Excel export** | Six-sheet timestamped `.xlsx` workbook saved to `output/` |
+| 🔒 **TLS-verified API calls** | Configurable CA bundle; `verify=False` removed entirely |
+| 🔑 **URL + credential validation** | RSC_URL validated against `*.my.rubrik.com` at startup; missing vars exit cleanly |
+
+---
 
 ## M365 Licensing Metrics
 
-| Metric | Formula | Source |
-|--------|---------|--------|
-| Consumed Users | max(Protected Mailboxes, Protected OneDrives) | Monthly object counts |
-| Data Protection Capacity | Front-end data ingested per month | transferredBytes aggregation |
-| Entitled Users | Licensed user count | m365LicenseEntitlement |
-| Entitled Capacity | Licensed GB | m365LicenseEntitlement |
+| Metric | Formula | API Source |
+|--------|---------|------------|
+| Consumed Users | `max(Protected Mailboxes, Protected OneDrives)` | `snappableGroupByConnection` monthly counts |
+| Data Protection Capacity | Front-end data ingested per month | `transferredBytes` aggregation |
+| Entitled Users | Licensed user count | `m365LicenseEntitlement` |
+| Entitled Capacity | Licensed GB | `m365LicenseEntitlement` |
+
+---
+
+## Prerequisites
+
+| Requirement | Details |
+|-------------|---------|
+| Python | 3.9 or higher (3.12 recommended) |
+| Network | HTTPS access to your RSC instance (port 443 outbound) |
+| RSC Permissions | Service account with read access to M365 objects and Reports |
+| Disk Space | ~50 MB |
+
+> You must have a valid API key and an active Rubrik Security Cloud subscription. This tool does not bypass licensing or provide unauthorised access to any Rubrik features.
 
 ---
 
@@ -47,76 +59,118 @@ This codebase was reviewed against four industry security frameworks. The table 
 ### macOS / Linux
 
 ```bash
+# Clone or download the repo
 unzip rsc-m365-storage-report-*.zip
 cd rsc-m365-storage-report
-chmod +x deploy.sh
-./deploy.sh
-nano .env          # Add your RSC credentials
+
+# Set up environment
+chmod +x deploy.sh && ./deploy.sh
+
+# Configure credentials
+cp .env.example .env
+nano .env   # Add your RSC credentials
+
+# Run
 python run_report.py
 ```
 
-### Windows
+### Windows (Command Prompt)
 
-```cmd
-# Extract zip, open Command Prompt in folder
+```bat
+REM Extract zip, open Command Prompt in folder
 deploy.bat
-notepad .env       # Add your RSC credentials
+copy .env.example .env
+notepad .env   REM Add your RSC credentials
 python run_report.py
 ```
 
----
-
-## Prerequisites
-
-- Python 3.9+ (3.12 recommended)
-- Network access to your RSC instance (HTTPS 443 outbound only)
-- RSC Service Account with **read-only** access to M365 objects and Reports
+Reports are written to `output/` as timestamped Excel files when the run completes.
 
 ---
 
 ## Configuration
 
-Copy `.env.example` to `.env` and fill in your values:
+### 1. Create your `.env` file
 
-```ini
+```bash
+cp .env.example .env
+```
+
+```dotenv
+# Required
 RSC_URL=https://your-org.my.rubrik.com
 RSC_CLIENT_ID=your-client-id
 RSC_CLIENT_SECRET=your-client-secret
 
-# Optional: path to a custom CA bundle (corporate proxy / private PKI)
+# Optional: custom CA bundle for corporate proxies / private PKI
 # RSC_CA_BUNDLE=/path/to/ca-bundle.crt
 ```
 
-> **Security note**: `.env` is listed in `.gitignore` and must **never** be committed to source control. The file should be readable only by the user running the script (`chmod 600 .env`).
+> ⚠️ **Never commit `.env` to version control.** It is already listed in `.gitignore`. On macOS/Linux, restrict the file to your user only: `chmod 600 .env`
+
+### 2. RSC Service Account Setup
+
+1. Log into RSC → **Settings** → **Service Accounts**
+2. Create a new service account
+3. Assign **read-only** access to M365 objects and Reports *(principle of least privilege)*
+4. Copy the Client ID and Secret — the secret is shown only once
+5. Paste values into your `.env`
+
+### 3. TLS Configuration
+
+RSC API calls verify TLS against system CAs by default. Override with `RSC_CA_BUNDLE`:
+
+```dotenv
+RSC_CA_BUNDLE=true                  # Default — verify against system CAs
+RSC_CA_BUNDLE=/path/to/bundle.pem   # Custom CA bundle for corporate PKI
+```
+
+> `verify=False` has been removed from this codebase entirely. TLS verification cannot be disabled.
+
+---
+
+## Full Configuration Reference
+
+### Required
+
+| Variable | Description |
+|----------|-------------|
+| `RSC_URL` | Base URL of your RSC tenant — must match `https://<org>.my.rubrik.com` |
+| `RSC_CLIENT_ID` | RSC service account client ID |
+| `RSC_CLIENT_SECRET` | RSC service account secret |
+
+### Optional
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `RSC_CA_BUNDLE` | `true` | `true` (system CAs) or path to a `.pem` CA bundle |
 
 ---
 
 ## Output
 
-Reports are saved to `output/` as timestamped Excel files:
+### Excel Workbook
 
 ```
 output/m365_license_compliance_report_20260505_143022.xlsx
 ```
 
-### Excel Sheets
-
 | Sheet | Contents |
 |-------|----------|
-| License Compliance | Entitled vs consumed with utilization % |
+| License Compliance | Entitled vs consumed with utilization % and status |
 | Monthly Users | Monthly protected object counts + consumed user calculation |
 | Monthly DPC (GB) | Monthly data transferred per workload type |
-| Monthly DPC (Bytes) | Raw byte values for precision |
-| Per-Org Consumption | Current consumption per M365 organization |
-| 10-Day Trend | Daily physical storage values |
+| Monthly DPC (Bytes) | Raw byte values for precision calculations |
+| Per-Org Consumption | Current consumption broken down per M365 organization |
+| 10-Day Trend | Daily physical storage values for the last 10 days |
 
-> **Data classification**: Output files contain M365 organization names and data volumes. Handle and store these according to your organization's data classification policy (typically Internal / Confidential).
+> ⚠️ Output files contain M365 organization names and data volumes. Treat as **Internal / Confidential** per your organization's data classification policy.
 
 ---
 
 ## Scheduling
 
-Run monthly to build historical compliance data.
+Run monthly to build a historical compliance archive.
 
 **Linux (cron):**
 
@@ -124,9 +178,9 @@ Run monthly to build historical compliance data.
 0 6 1 * * cd /path/to/project && ./venv/bin/python final_m365_report.py >> output/cron.log 2>&1
 ```
 
-**Windows:** Use Task Scheduler (see `output/RSC_M365_License_Compliance_Report_Guide.docx`)
+**Windows:** Use Task Scheduler — see the full operations guide at `output/RSC_M365_License_Compliance_Report_Guide.docx`
 
-**macOS:** Use launchd (see documentation)
+**macOS:** Use launchd — see the full operations guide
 
 ---
 
@@ -136,12 +190,15 @@ Run monthly to build historical compliance data.
 rsc-m365-storage-report/
 ├── final_m365_report.py    # Main report script
 ├── run_report.py           # Cross-platform entry-point wrapper
+├── generate_docs.py        # Word doc + README generator
+├── package_project.py      # Distribution packager
 ├── deploy.sh               # macOS/Linux deployment
 ├── deploy_linux.sh         # Linux deployment (distro-aware)
 ├── deploy.bat              # Windows deployment
 ├── requirements.txt        # Pinned Python dependencies
 ├── .env.example            # Configuration template (safe to commit)
 ├── .env                    # Your credentials — DO NOT COMMIT
+├── SECURITY.md             # Vulnerability reporting policy
 ├── src/
 │   ├── __init__.py
 │   ├── auth.py             # RSC OAuth2 authentication
@@ -153,27 +210,52 @@ rsc-m365-storage-report/
 
 ## Security
 
-### Credential Handling
-- `.env` is excluded from version control via `.gitignore`
-- `RSC_CLIENT_ID` and `RSC_CLIENT_SECRET` are loaded from environment only — never hard-coded
+v2.1 was reviewed against **OWASP Top 10 (2021)**, **NIST CSF 2.0**, **CIS Controls v8**, and **MITRE ATT&CK for Enterprise**. The following hardening measures are in place.
+
+### Credential Protection
+
+- Credentials are loaded exclusively from `.env` — never hard-coded
 - Tokens are kept in memory only and never written to disk or logs
+- Exception messages are sanitized — `CLIENT_ID`, `CLIENT_SECRET`, and token values never appear in tracebacks
+- Use a **dedicated read-only service account**. Rotate the secret periodically to limit blast radius.
 
-### Transport Security
-- All API communication uses TLS 1.2+; certificate verification is enforced
-- The `RSC_URL` must resolve to `*.my.rubrik.com` (validated at startup)
-- Corporate CA bundles can be specified via `RSC_CA_BUNDLE` without disabling verification
+### TLS Verification
 
-### Least Privilege
-- Service account should be configured as **read-only** in RSC
-- No write, backup/restore, or administrative permissions are required
+- All RSC API calls verify TLS against system CAs. This cannot be disabled.
+- `RSC_URL` is validated at startup against `https://*.my.rubrik.com` — plaintext URLs and unexpected hosts are rejected before any credentials are transmitted.
+- Corporate CA bundles can be specified via `RSC_CA_BUNDLE` without weakening verification.
 
-### Audit Trail
-- RSC logs all API calls under **Settings → Audit Log**
-- Run timestamps are embedded in all output filenames
+### Output File Security
 
-### Dependency Security
-- `urllib3` and `certifi` are explicit dependencies to allow security patching
-- Run `pip install --upgrade -r requirements.txt` periodically to pull CVE patches
+Assessment output contains M365 organization names, user counts, and data volumes. Treat it as sensitive.
+
+- `output/` is excluded from version control via `.gitignore`
+- Output files contain no credentials or tokens — only aggregated licensing and storage metrics
+
+### Dependency Auditing
+
+Dependencies are pinned in `requirements.txt` including `urllib3` and `certifi` for TLS-layer patch tracking. Keep them current:
+
+```bash
+pip install --upgrade -r requirements.txt
+```
+
+### Security Review Summary (v2.1)
+
+| # | Framework | Finding | Severity | Status |
+|---|-----------|---------|----------|--------|
+| 1 | OWASP A02 | `requests.post()` lacked explicit `verify=` — silent TLS bypass possible | High | ✅ Fixed |
+| 2 | OWASP A07 | `os.getenv()` returned `None` silently — unauthenticated API calls possible | High | ✅ Fixed |
+| 3 | OWASP A05 | `RSC_URL` accepted any scheme/host — credentials could be sent to wrong host | High | ✅ Fixed |
+| 4 | OWASP A09 | No `raise_for_status()` — HTTP 401/403 silently returned `None` | High | ✅ Fixed |
+| 5 | NIST PR.DS-1 | Exception tracebacks could expose credential fragments | Medium | ✅ Fixed |
+| 6 | OWASP A03 | Nested `data["key"]` access crashed on unexpected API response shapes | Medium | ✅ Fixed |
+| 7 | NIST PR.DS-5 | `output/*.docx`, `*.pdf`, `*.log` not excluded from `.gitignore` | Medium | ✅ Fixed |
+| 8 | CIS Control 4 | `urllib3` and `certifi` absent from `requirements.txt`; versions stale | Medium | ✅ Fixed |
+| 9 | NIST PR.DS-2 | `os.makedirs` missing `exist_ok=True` — crash if `output/` absent | Low | ✅ Fixed |
+| 10 | CIS Control 16 | `os.path.join` not used — forward-slash path non-portable on Windows | Low | ✅ Fixed |
+
+See [SECURITY.md](SECURITY.md) for the vulnerability reporting policy.
 
 ---
 
@@ -181,15 +263,15 @@ rsc-m365-storage-report/
 
 | Issue | Solution |
 |-------|----------|
-| `RSC_URL is not set` | Copy `.env.example` to `.env` and set all three variables |
+| `RSC_URL is not set` | Copy `.env.example` to `.env` and set all three required variables |
 | `RSC_URL must use HTTPS` | Verify the URL in `.env` starts with `https://` |
-| `RSC_URL does not match expected pattern` | URL must be `https://<org>.my.rubrik.com` exactly |
+| `RSC_URL does not match expected pattern` | URL must be exactly `https://<org>.my.rubrik.com` |
 | TLS certificate verification failed | Set `RSC_CA_BUNDLE=/path/to/ca-bundle.crt` for corporate CAs |
-| `Authentication failed (HTTP 401)` | Verify CLIENT_ID and SECRET in `.env` |
-| `Authentication failed (HTTP 403)` | Service account needs more permissions in RSC |
-| Connection refused / Timeout | Check RSC_URL, verify VPN/network, confirm port 443 is open |
-| Storage shows 0 | Normal for per-object M365; use DPC/transferredBytes metrics |
-| No monthly data | Verify M365 backups are actively running |
+| `Authentication failed (HTTP 401)` | Verify `RSC_CLIENT_ID` and `RSC_CLIENT_SECRET` in `.env` |
+| `Authentication failed (HTTP 403)` | Service account needs read access to M365 objects and Reports |
+| Connection refused / Timeout | Check `RSC_URL`, confirm VPN/network, verify port 443 is open outbound |
+| Storage shows 0 | Normal for per-object M365 — use DPC / `transferredBytes` metrics instead |
+| No monthly data | Verify M365 backups are actively running in RSC |
 
 ---
 
@@ -202,3 +284,19 @@ Generate with:
 ```bash
 python generate_docs.py
 ```
+
+---
+
+## Legal & Disclaimer
+
+This project is an **independent, open-source tool** and is **not affiliated with, authorized, maintained, sponsored, or endorsed by Rubrik, Inc.** in any way. All product and company names are the registered trademarks of their respective owners. The use of any trade name or trademark is for identification and reference purposes only.
+
+This software is provided **"as-is," without warranty of any kind**. Use of this tool is at your own risk. The authors are not responsible for any data loss, API rate-limit overages, account suspensions, or security incidents resulting from the use of this software.
+
+You must have a valid API key and an active subscription or license for Rubrik Security Cloud (RSC). This software does not bypass any licensing checks or provide unauthorised access to Rubrik features.
+
+---
+
+## License
+
+[Apache 2.0](LICENSE)
