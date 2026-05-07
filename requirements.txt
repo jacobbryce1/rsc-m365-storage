@@ -1,6 +1,17 @@
-requests>=2.31.0
-pandas>=2.0.0
-python-dotenv>=1.0.0
-python-dateutil>=2.8.2
-tabulate>=0.9.0
-openpyxl>=3.1.0
+# RSC M365 Storage Report — Python dependencies
+# ================================================
+# All minimum versions set to the latest stable release as of 2026-05.
+# Pin to major.minor to allow patch-level security updates while
+# preventing unintended breaking changes.
+#
+# To update: pip install --upgrade -r requirements.txt
+#            then run the test suite and commit updated versions.
+
+requests>=2.32.0          # HTTP client — keep current for CVE patches
+urllib3>=2.2.0            # TLS backend used by requests
+certifi>=2024.2.2         # CA bundle — update regularly
+pandas>=2.2.0             # DataFrame / Excel output
+python-dotenv>=1.0.1      # .env file loading
+python-dateutil>=2.9.0    # Date parsing utilities
+tabulate>=0.9.0           # Console table formatting
+openpyxl>=3.1.2           # Excel (.xlsx) writer engine

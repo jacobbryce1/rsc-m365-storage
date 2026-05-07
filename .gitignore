@@ -1,27 +1,63 @@
-# Virtual environment
+# =============================================================
+# RSC M365 Storage Report — .gitignore
+# =============================================================
+
+# ---- Credentials & secrets (CRITICAL — never commit) --------
+.env
+*.env
+.env.*
+!.env.example        # keep the example template
+
+# ---- Python virtual environment -----------------------------
 venv/
 .venv/
+env/
+ENV/
 
-# Environment secrets
-.env
-
-# Python
+# ---- Python bytecode & build artefacts ----------------------
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
+*.pyd
 *.egg-info/
 dist/
 build/
+*.egg
+*.whl
+.eggs/
 
-# Output files (optional - you may want to track these)
+# ---- Output files (compliance reports) ----------------------
+# These contain org names and data volumes — treat as confidential.
+# Untrack report outputs; only commit the .gitkeep placeholder.
 output/*.csv
 output/*.xlsx
+output/*.docx
+output/*.pdf
+output/cron.log
+output/*.log
+# keep the directory itself
+!output/.gitkeep
 
-# OS files
+# ---- Debug / scratch files ----------------------------------
+debug/
+*.debug
+
+# ---- OS generated files -------------------------------------
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# IDE
+# ---- IDE / editor -------------------------------------------
 .vscode/
 .idea/
 *.swp
+*.swo
+*~
+
+# ---- Packaging artefacts ------------------------------------
+*.zip
+dist/
