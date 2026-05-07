@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+.venv/
+
+# Environment secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Output files (optional - you may want to track these)
+output/*.csv
+output/*.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

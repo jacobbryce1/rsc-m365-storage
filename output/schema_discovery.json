@@ -1,0 +1,7151 @@
+[
+  {
+    "name": "allArchivalLocationForecasts",
+    "description": "Returns forecasted archival storage for the requested locations.\nData is aggregated per location across all protected objects.",
+    "args": [
+      {
+        "name": "locationIds",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allAzureBlobContainersByStorageAccount",
+    "description": "List all Azure blob containers by storage account.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AzureBlobContainersByStorageAccountInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureBlobContainerCcprovisionConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "allAzureNativeStorageAccountsFromAzure",
+    "description": "Retrieves list of all storage Accounts in a subscription.",
+    "args": [
+      {
+        "name": "azureSubscriptionRubrikId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allAzureStorageAccounts",
+    "description": "List all Azure storage accounts by resource group.",
+    "args": [
+      {
+        "name": "storageAccountsRequest",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AzureStorageAccountsReq",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allAzureStorageAccountsByRegion",
+    "description": "List all Azure storage accounts by region.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AzureStorageAccountsByRegionInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allCustomReports",
+    "description": "Retrieve reports created by users.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AllCustomReportsInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allM365OrgOutboundIps",
+    "description": "Outbound IP addresses for a Microsoft 365 organization\nacross all exocompute clusters.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allNosqlStorageLocations",
+    "description": "List of Mosaic Storage Locations used for NoSQL backups",
+    "args": [
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "MosaicStorageLocationQuerySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allO365AdGroups",
+    "description": "All AD Groups belonging to the O365 organization.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "adGroupSearchFilter",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allO365OrgStatuses",
+    "description": "Gets the status of each org in the account.",
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allO365SubscriptionsAppTypeCounts",
+    "description": "Returns the total number of apps of each type, for each O365 org.",
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allReclaimableClusterStats",
+    "description": "Get reclaimable cluster stats data for multiple clusters.\nThis RPC aggregates storage data from unmanaged_objects table\nand cluster stats.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": "ReclaimableClusterStatsFilterInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "ReclaimableClusterStatsSortBy",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ReclaimableClusterStatsDataConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "allReportTemplatesByCategories",
+    "description": "Retrieve all report templates by category.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AllReportTemplatesByCategoriesInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allSharepointSiteExclusions",
+    "description": "Sharepoint site objects excluded from protection.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "siteFids",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "allStorageArrays",
+    "description": "Summary of all storage arrays\n\nSupported in v5.0+\nRetrieve the host IP and username for all storage arrays.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AllStorageArraysReply",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "archivalStorageUsage",
+    "description": "Storage usage of an archival location.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "lookBackWindow",
+        "type": {
+          "name": "LookBackWindow",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "azureNativeManagedDisk",
+    "description": "Retrieves an Azure Native Managed Disk that refers to the block storage designed to be used with Azure Virtual Machines. Some examples are: ultra disks, premium solid-state drives (SSD), standard SSDs, and standard hard disk drives (HDD). For more information, see https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview.",
+    "args": [
+      {
+        "name": "azureManagedDiskRubrikId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "includeSecurityMetadata",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureNativeManagedDisk",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365CheckNSGOutboundRules",
+    "description": "Checks the NSG Outbound rules of the Azure resources.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "resourceGroupName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "vnet_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subnet_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureNetworkSecurityGroupResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365CheckNetworkSubnet",
+    "description": "Checks the network subnet of the Azure resources.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "resourceGroupName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "vnet_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subnet_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "strict_addr_check",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureNetworkSubnetResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365CheckResourceGroupName",
+    "description": "Checks the resource group name.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "groupName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureResourceAvailabilityResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365CheckStorageAccountAccessibility",
+    "description": "Checks the accessibility of the storage account.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "storage_account_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "groupName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureResourceAvailabilityResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365CheckStorageAccountName",
+    "description": "Checks the storage account name.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "storage_account_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureResourceAvailabilityResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365CheckSubscriptionQuota",
+    "description": "Checks the Azure subscription quota.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "regionName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureResourceAvailabilityResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365CheckVirtualNetworkName",
+    "description": "Checks the virtual network name.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "groupName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "vnet_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureResourceAvailabilityResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365Exocompute",
+    "description": "Gets the exocompute details of the given cluster.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "exocomputeClusterId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetAzureO365ExocomputeResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365GetAzureHostType",
+    "description": "Retrieves the AzureHostType of the account.",
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetAzureHostTypeResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365GetNetworkSubnetUnusedAddr",
+    "description": "Retrieves the unused addresses available in a subnet.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "resourceGroupName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "vnet_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subnet_name",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "strict_addr_check",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureNetworkSubnetUnusedAddrResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureO365ValidateUserRoles",
+    "description": "Validates the user roles in the subscription.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "AzureUserRoleResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureStorageAccountContainers",
+    "description": "Retrieves the list of containers for the specified storage account.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "StorageAccountContainersSortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "azureStorageAccountRubrikId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "BlobContainerConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureStorageAccountExcludedContainers",
+    "description": "Retrieves the list of containers excluded from protection for the specified storage account.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "ExcludedContainersSortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "azureStorageAccountRubrikId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExcludedContainerConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "azureStorageAccounts",
+    "description": "Gets the storage accounts for the given subscription.",
+    "args": [
+      {
+        "name": "tenantId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "regionName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "StorageAccountConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseCalendar",
+    "description": "Browse Exchange calendar.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "calendarSearchFilter",
+        "type": {
+          "name": "CalendarSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365ExchangeObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseContacts",
+    "description": "Browse Exchange contacts.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "contactsSearchFilter",
+        "type": {
+          "name": "ContactsSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365ExchangeObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseO365TeamConvChannels",
+    "description": "Browse channels in a Teams conversations snapshot.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFidOpt",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "excludeArchived",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "channelMembershipTypeFilter",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ChannelMembershipType",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "nameFilter",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365TeamConvChannelConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseOnedrive",
+    "description": "Browse OneDrive files and folders.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "onedriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseSharepointDrive",
+    "description": "Browse SharePoint  drive files and folders.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sharepointDriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "siteChildId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "siteChildType",
+        "type": {
+          "name": "SharePointDescendantType",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseSharepointList",
+    "description": "Browse list objects.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sharepointDriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "siteChildId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseTeamsChannels",
+    "description": "Browse channels in a Teams files snapshot.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "channelMembershipTypeFilter",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ChannelMembershipType",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "nameFilter",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365TeamsChannelConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "browseTeamsDrive",
+    "description": "Browse team files.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "folderId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "teamsDriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "cdmHierarchySnappableNew",
+    "description": null,
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "CdmHierarchySnappableNew",
+        "kind": "INTERFACE"
+      }
+    }
+  },
+  {
+    "name": "cdmHierarchySnappablesNew",
+    "description": null,
+    "args": [
+      {
+        "name": "fids",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": null,
+        "kind": "LIST"
+      }
+    }
+  },
+  {
+    "name": "checkAzurePersistentStorageSubscriptionCanUnmap",
+    "description": "Checks if we can unmap the archival location from the subscription.",
+    "args": [
+      {
+        "name": "cloudAccountId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "feature",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "CloudAccountFeature",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "unmappingValidationType",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UnmappingValidationType",
+            "kind": "ENUM"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "CheckAzurePersistentStorageSubscriptionCanUnmapReply",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "cloudNativeWorkloadVersionedFiles",
+    "description": "List all files and directories in a given snappable with the given prefix in name.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "searchQuery",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "CloudNativeVersionedFileConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "clusterNtpServers",
+    "description": "Get NTP Servers\n\nSupported in v5.0+\nRetrieve a list of the NTP servers assigned to the Rubrik cluster. Encryption keys are not reported.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "GetClusterNtpServersInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "NtpServerConfigurationListResponse",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "clusterReportMigrationCount",
+    "description": "Retrieve details of the Rubrik clusters' reports migration.",
+    "args": [
+      {
+        "name": "status",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "clusterUuid",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ReportsMigrationCount",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "clusterReportMigrationJobStatus",
+    "description": "Retrieve the status of the cluster report migration job.",
+    "args": [
+      {
+        "name": "clusterUuid",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ClusterReportMigrationJobStatus",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "clusterReportMigrationStatus",
+    "description": "Retrieve details of the Rubrik clusters' reports migration.",
+    "args": [
+      {
+        "name": "clusterUuid",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "status",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ReportMigrationStatusConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "customReports",
+    "description": "Retrieves reports created by users with pagination support.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": "CustomReportsFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "CustomReportSortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "CustomReportInfoConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "databaseLogReportForCluster",
+    "description": "Get the database log backup delay information\n\nSupported in v5.3+\nv5.3:\nv6.0+: Get the database log backup delay information.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "QueryLogReportInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "DbLogReportSummaryListReply",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "databaseLogReportingPropertiesForCluster",
+    "description": "Get the database log backup report properties\n\nSupported in v5.3+\nGet the properties for the database (SQL and Oracle) log backup delay email notification creation. The properties are logDelayThresholdInMin and logDelayNotificationFrequencyInMin.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "QueryReportPropertiesInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "DbLogReportProperties",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "exchangeDag",
+    "description": "Details of an Exchange DAG for a given fid.",
+    "args": [
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExchangeDag",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "exchangeDags",
+    "description": "Connection of filtered Exchange DAGs based on specific filters.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExchangeDagConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "exchangeDatabase",
+    "description": "Details of an Exchange Database for a given fid.",
+    "args": [
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExchangeDatabase",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "exchangeDatabases",
+    "description": "Connection of filtered Exchange Databases based on specific filters.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExchangeDatabaseConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "exchangeLiveMounts",
+    "description": "Paginated list of Exchange Database live mounts.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filters",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "ExchangeLiveMountSortByInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExchangeLiveMountConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "exchangeServer",
+    "description": "Details of an Exchange Server for a given fid.",
+    "args": [
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExchangeServer",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "exchangeServers",
+    "description": "Connection of filtered Exchange Servers based on specific filters.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ExchangeServerConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "generateCloudDirectTaskReport",
+    "description": "GenerateCloudDirectTaskReport generates a task report for failed paths of a Cloud Direct task.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "GenerateCloudDirectTaskReportReq",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GenerateCloudDirectTaskReportReply",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "hasAccessToO365Objects",
+    "description": "HasAccessToO365Objects returns if user has access to any o365 objects.",
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "HasAccessToO365ObjectsResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "healthCheckErrorReport",
+    "description": "GetHealthCheckErrorReport returns the detailed failure information for\nhealth checks that can have multiple components succeed/fail independently.\nThe failure information is returned in CSV format.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "GetHealthCheckErrorReportReq",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetHealthCheckErrorReportReply",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "hierarchySnappables",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "HierarchySnappableConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "isAwsNativeRdsInstanceLaunchConfigurationValid",
+    "description": "Specifies whether the given DbInstance class, storage type, multi-az capability, encryption capability, iops value are supported for the given dbEngine, dbEngineVersion in the specified availability zone. When true, the specification is valid for a RDS Instance and can be used to create a new Instance.",
+    "args": [
+      {
+        "name": "awsAccountRubrikId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "region",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AwsNativeRegion",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "dbEngine",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AwsNativeRdsDbEngine",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "dbEngineVersion",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "dbClass",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AwsNativeRdsDbInstanceClass",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "databaseInstanceClass",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "primaryAz",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "storageType",
+        "type": {
+          "name": "AwsNativeRdsStorageType",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "isMultiAz",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "kmsKeyId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "iops",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  },
+  {
+    "name": "isAzureStorageAccountNameAvailable",
+    "description": "Specifies whether the given storage account name is valid and available in Azure to be assigned to a new storage account. When the value is true, the specified account name is available in Azure.",
+    "args": [
+      {
+        "name": "azureSubscriptionRubrikId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "storageAccountName",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "Boolean",
+        "kind": "SCALAR"
+      }
+    }
+  },
+  {
+    "name": "isZrsAvailableForLocation",
+    "description": "Checks if Zone Redundant Storage (ZRS) is available for a given combination of account, region, subscription and service tier.",
+    "args": [
+      {
+        "name": "serviceTier",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ServiceTier",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "region",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "AzureNativeRegion",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "subscriptionId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ZrsAvailabilityReply",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "legalHoldSnapshotsForSnappable",
+    "description": "List of legal hold snapshots for a workload.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "LegalHoldSnapshotsForSnappableInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "LegalHoldSnapshotDetailConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "listO365Apps",
+    "description": "Lists the O365 apps.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "o365AppFilters",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "o365AppSortByParam",
+        "type": {
+          "name": "AppSortByParam",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365AppConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365BackupStorageLicenseUsage",
+    "description": "Returns usage of Microsoft backups storage for an account.",
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "M365BackupStorageLicenseUsage",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365BackupStorageObjectRestorePoints",
+    "description": "Lists the Microsoft 365 backup storage object restore points.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "m365BackupStorageObjectRestorePointsInput",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "M365BackupStorageObjectRestorePointsInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "M365BackupStorageRestorePointConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365DayToDayModeStats",
+    "description": "Returns the statistics of an M365 organization product in day-to-day mode.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "dashboardWorkloadType",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "M365DashboardWorkloadType",
+            "kind": "ENUM"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "DayToDayModeStats",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365DirectoryObjectAttributes",
+    "description": "Lists down the directory object attribute present in the Microsoft tenant.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ListM365DirectoryObjectAttributesInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ListO365DirectoryObjectAttributesResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365LicenseEntitlement",
+    "description": "Display license entitlement for M365 workloads.",
+    "args": [
+      {
+        "name": "orgID",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "M365LicenseEntitlementReply",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365Mvc",
+    "description": "ListMvcProfiles lists MVC profiles for an org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "MvcProfileSortField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "includeArchived",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "MvcProfileConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365OnboardingModeBackupStats",
+    "description": "Returns the backup statistics of an M365 organization product in onboarding mode.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "dashboardWorkloadType",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "M365DashboardWorkloadType",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "backupStatsTimeRange",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "BackupStatsTimeRange",
+            "kind": "ENUM"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "OnboardingModeBackupStats",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365OnboardingModeStats",
+    "description": "Returns the statistics of an M365 organization product in onboarding mode.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "dashboardWorkloadType",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "M365DashboardWorkloadType",
+            "kind": "ENUM"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "OnboardingModeStats",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365OrgBackupLocations",
+    "description": "Returns the backup locations of an M365 organization.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "M365OrgBackupLocations",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365OrgOperationModes",
+    "description": "Returns the operation modes of an M365 organization.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "M365OrgOperationModes",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "m365Regions",
+    "description": "Retrieves the M365 regions for the organization.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "M365RegionsResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "ncdBackEndCapacity",
+    "description": "NAS Cloud Direct back-end capacity for the requested clusters.",
+    "args": [
+      {
+        "name": "clusters",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": "NcdBackEndCapacity",
+      "kind": "OBJECT",
+      "ofType": null
+    }
+  },
+  {
+    "name": "ncdFrontEndCapacity",
+    "description": "NAS Cloud Direct front-end capacity for the requested clusters.",
+    "args": [
+      {
+        "name": "clusters",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": "NcdFrontEndCapacity",
+      "kind": "OBJECT",
+      "ofType": null
+    }
+  },
+  {
+    "name": "o365Calendar",
+    "description": "Details of the Exchange calendar pertaining to the snappable ID.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Calendar",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Consumption",
+    "description": "Display license consumption for M365 workloads.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "O365ConsumptionInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Consumption",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Groups",
+    "description": "List of O365 Groups in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snappableType",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "SnappableType",
+            "kind": "ENUM"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365GroupConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365License",
+    "description": "Retrieve o365 licence details.",
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365License",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Mailbox",
+    "description": "Details for the Exchange mailbox corresponding to the snappable ID.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Mailbox",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Mailboxes",
+    "description": "List of Mailboxes in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365MailboxConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365ObjectAncestors",
+    "description": null,
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetImplicitlyAuthorizedAncestorSummariesResponse",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Onedrive",
+    "description": "Details for the OneDrive corresponding to the snappable ID.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Onedrive",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Onedrives",
+    "description": "List of Onedrives in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Org",
+    "description": "Details of the O365Org.",
+    "args": [
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Org",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365OrgAtSnappableLevel",
+    "description": "Details of the O365Org at snappable level, given the snappable type.",
+    "args": [
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snappableType",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "SnappableType",
+            "kind": "ENUM"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Org",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365OrgSummaries",
+    "description": null,
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetImplicitlyAuthorizedObjectSummariesResponse",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Orgs",
+    "description": "All O365 orgs for the account.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "workloadHierarchy",
+        "type": {
+          "name": "WorkloadLevelHierarchy",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OrgConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365ServiceAccount",
+    "description": "Gets the service account for the given org.",
+    "args": [
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365ServiceAccountStatusResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365ServiceStatus",
+    "description": "Returns the service status of the O365 service running on MSFT server.",
+    "args": [
+      {
+        "name": "orgID",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetO365ServiceStatusResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointDrive",
+    "description": "Details for the SharePoint drive corresponding to the snappable ID.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SharepointDrive",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointDrives",
+    "description": "List of sharepoint drives (document libraries) in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SharepointDriveConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointList",
+    "description": "Details for the SharePoint list corresponding to the snappable ID.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SharepointList",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointLists",
+    "description": "Paginated list of sharepoint lists in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SharepointListConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointObjectList",
+    "description": "Returns the sharepoint objects after filtering on the object types and includeEntireHierarchy.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "objectTypeFilter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "includeEntireHierarchy",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SharepointObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointObjectsNew",
+    "description": "Compared to the endpoint o365SharepointObjectList, this endpoint retrieves and persists SharePoint site hierarchy from Microsoft directly. Returns the SharePoint objects after filtering by the object types.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "objectTypeFilter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "includeEntireHierarchy",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SharepointObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointSite",
+    "description": "Details for the SharePoint site corresponding to the site ID.",
+    "args": [
+      {
+        "name": "siteFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Site",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365SharepointSites",
+    "description": "Paginated list of sharepoint sites in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SiteConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Site",
+    "description": "Details for the SharePoint site corresponding to the snappable ID.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Site",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Sites",
+    "description": "List of sites in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "excludeChildSites",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365SiteConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365StorageStats",
+    "description": "Returns the storage stats of an O365 org.",
+    "args": [
+      {
+        "name": "orgID",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetO365StorageStatsResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Team",
+    "description": "Details for the team corresponding to the snappable ID.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365Teams",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365TeamChannels",
+    "description": "List of Channels for the O365Team.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "excludeArchived",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Boolean",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "channelMembershipTypeFilter",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ChannelMembershipType",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "nameFilter",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365TeamsChannelConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365TeamConversationsFolderID",
+    "description": "ID for the conversations folder in the Team's Group Mailbox.",
+    "args": [
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "String",
+        "kind": "SCALAR"
+      }
+    }
+  },
+  {
+    "name": "o365TeamPostedBy",
+    "description": "Users who have posted in a team.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "nameFilter",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365TeamConversationsSenderConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365Teams",
+    "description": "List of O365 Teams in the O365Org.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "o365OrgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365TeamsConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365User",
+    "description": "Details for the O365 user corresponding to the ID.",
+    "args": [
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365User",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365UserObjects",
+    "description": "Name, id, object type, and mail address of user descendant object.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "HierarchySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "fid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365UserDescendantMetadataConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "o365UserSelfServiceInfo",
+    "description": "Returns the self service information for the logged-in user, which includes the user name and the M365 object details.",
+    "args": [],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetSelfServiceInfoForUserResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "queryO365RecoveryAnalysisResult",
+    "description": "QueryO365RecoveryAnalysisResult retrieves the recovery analysis result from\nGCS for a given taskchain ID. This provides per-user analysis of Exchange,\nOneDrive, and SharePoint activity data.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "GetRecoveryAnalysisResultReq",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetRecoveryAnalysisResultResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "rcsArchivalLocationsConsumptionStats",
+    "description": "RCS Azure archival location consumption stats.",
+    "args": [
+      {
+        "name": "rcsAzureTargetConsumptionStatsRequest",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "RcsConsumptionStatsInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "RcsAzureArchivalLocationsConsumptionStatsOutput",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "reportData",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "dataView",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "DataViewTypeEnum",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "columns",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "filters",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "groupBy",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "secondaryGroupBy",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "aggregations",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "timezone",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "RowConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "reportObjects",
+    "description": "Get report objects with report-specific filtering and pagination.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "ReportObjectSortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ReportObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "scheduledReport",
+    "description": "Retrieve details of a scheduled report.",
+    "args": [
+      {
+        "name": "id",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "Int",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": "ScheduledReport",
+      "kind": "OBJECT",
+      "ofType": null
+    }
+  },
+  {
+    "name": "scheduledReports",
+    "description": "Retrieve details of scheduled reports. If the reportId is None, return schedules of all reports. Otherwise, return the schedules of reportId.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": "ScheduledReportFilterInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ScheduledReportConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "searchM365BackupStorageObjectRestorePoints",
+    "description": "Searches the M365 Backup Storage object restore points.",
+    "args": [
+      {
+        "name": "searchM365BackupStorageObjectRestorePointsInput",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "M365BackupStorageObjectSearchRestorePointsInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "SearchM365BackupStorageObjectRestorePointsResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "searchSnappableConnection",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "SnappableSortByEnum",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": "SnappableFilterInputWithSearch",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "SnappableConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "searchSnappableVersionedFiles",
+    "description": "List of all files in snapshots whose names match the specified search query.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "searchQuery",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "usePrefixSearch",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "VersionedFileConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "sharepointSiteDescendants",
+    "description": "Browse site and descendants objects.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "siteFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "naturalId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sharepointSiteSearchFilter",
+        "type": {
+          "name": "SharePointSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365FullSpObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "sharepointSiteSearch",
+    "description": "Search site and descendant objects.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "siteFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "sharepointSiteSearchFilter",
+        "type": {
+          "name": "SharePointSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365FullSpObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "skippedTeamsSiteReport",
+    "description": "GetSkippedTeamsSiteReport returns back a report of the skipped teams\nsites for sharepoint bulk recovery.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "GetSkippedTeamsSiteReportReq",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GetSkippedTeamsSiteReportResp",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableConnection",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "SnappableSortByEnum",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": "SnappableFilterInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "SnappableConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableContactSearch",
+    "description": "Search over Exchange contacts.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "contactsSearchFilter",
+        "type": {
+          "name": "ContactsSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365ExchangeObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableEmailSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "searchFilter",
+        "type": {
+          "name": "SearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365ExchangeObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableEventSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "calendarSearchFilter",
+        "type": {
+          "name": "CalendarSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365ExchangeObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableGroupByConnection",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "groupBy",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "SnappableGroupByEnum",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": "SnappableGroupByFilterInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "timezoneOffset",
+        "type": {
+          "name": "Float",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "requestedAggregations",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "SnappableGroupByConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableOnedriveSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "onedriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableSharepointDriveSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "sharepointDriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "siteChildId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "siteChildType",
+        "type": {
+          "name": "SharePointDescendantType",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableSharepointListSearch",
+    "description": "Search list objects.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "sharepointDriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "siteChildId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableTeamsConversationsSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFidOpt",
+        "type": {
+          "name": "UUID",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "teamConvChannels",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "teamsConversationsSearchFilter",
+        "type": {
+          "name": "TeamsConversationsSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365TeamsConversationsConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappableTeamsDriveSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "channelId",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "channelFolderName",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "teamsDriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snappablesWithLegalHoldSnapshotsSummary",
+    "description": "List of workloads with legal hold snapshots.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "SnappablesWithLegalHoldSnapshotsInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "LegalHoldSnappableDetailConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snapshotOfASnappableConnection",
+    "description": "Returns a list of snapshots for a workload.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "workloadId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFilter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "SnapshotQuerySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "timeRange",
+        "type": {
+          "name": "TimeRangeInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "ignoreActiveWorkloadCheck",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "showSnapshotRetentionInfo",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "includeOnlySourceSnapshots",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "shouldExcludeCdmSnapshotRetentionInfo",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "shouldShowCdmSnapshotLocationInfoArg",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GenericSnapshotConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snapshotOfSnappablesConnection",
+    "description": "Returns list of snapshots for a list of workloads.",
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableIds",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "snapshotFilter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "SnapshotQuerySortByField",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "timeRange",
+        "type": {
+          "name": "TimeRangeInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "ignoreActiveWorkloadCheck",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "includeOnlySourceSnapshots",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "shouldExcludeCdmSnapshotRetentionInfo",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "shouldShowCdmSnapshotLocationInfoArg",
+        "type": {
+          "name": "Boolean",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "GenericSnapshotConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snapshotOnedriveSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "onedriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "snapshotSharepointDriveSearch",
+    "description": null,
+    "args": [
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "snappableFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "snapshotFid",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "orgId",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "UUID",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "sharepointDriveSearchFilter",
+        "type": {
+          "name": "OnedriveSearchFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "O365OnedriveObjectConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "sonarContentReport",
+    "description": "Returns groupBy results for SonarContentReport.",
+    "args": [
+      {
+        "name": "groupBy",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "DiscoveryContentReportGroupBy",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "DiscoveryContentReportSortBy",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filters",
+        "type": {
+          "name": "SonarContentReportFilter",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      },
+      {
+        "name": "day",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "timezone",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "String",
+            "kind": "SCALAR"
+          }
+        }
+      },
+      {
+        "name": "workloadTypes",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": null,
+            "kind": "LIST"
+          }
+        }
+      },
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "SonarContentReportConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "sonarReport",
+    "description": "Returns groupBy for SonarReport.",
+    "args": [
+      {
+        "name": "sonarReportGroupBy",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "DiscoveryReportGroupBy",
+            "kind": "ENUM"
+          }
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "timeFilter",
+        "type": {
+          "name": "TimeFilterInput",
+          "kind": "INPUT_OBJECT",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "SonarReportConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "sonarReportRow",
+    "description": "Returns rows for SonarReport table.",
+    "args": [
+      {
+        "name": "sortBy",
+        "type": {
+          "name": "DiscoveryReportSortBy",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "sortOrder",
+        "type": {
+          "name": "SortOrder",
+          "kind": "ENUM",
+          "ofType": null
+        }
+      },
+      {
+        "name": "filter",
+        "type": {
+          "name": null,
+          "kind": "LIST",
+          "ofType": {
+            "name": null,
+            "kind": "NON_NULL"
+          }
+        }
+      },
+      {
+        "name": "endTime",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "first",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "after",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "last",
+        "type": {
+          "name": "Int",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      },
+      {
+        "name": "before",
+        "type": {
+          "name": "String",
+          "kind": "SCALAR",
+          "ofType": null
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "SonarReportRowConnection",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "validateClusterLicenseCapacity",
+    "description": "Information about cluster license capacity validations.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "ValidateClusterLicenseCapacityInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "ClusterLicenseCapacityValidations",
+        "kind": "OBJECT"
+      }
+    }
+  },
+  {
+    "name": "vappTemplateSnapshotExportOptions",
+    "description": "Get Export information for a vApp template snapshot\n\nSupported in v5.1+\nRetrieve the available choices vApp template storage profile and organization vDC choices in case of exporting to either original organization vDC defaults of the target catalog. In case advanced option of manually deciding org vdc is preferred, this also provides available storage profile choices.",
+    "args": [
+      {
+        "name": "input",
+        "type": {
+          "name": null,
+          "kind": "NON_NULL",
+          "ofType": {
+            "name": "VappTemplateSnapshotExportOptionsInput",
+            "kind": "INPUT_OBJECT"
+          }
+        }
+      }
+    ],
+    "type": {
+      "name": null,
+      "kind": "NON_NULL",
+      "ofType": {
+        "name": "VappTemplateExportOptionsUnion",
+        "kind": "OBJECT"
+      }
+    }
+  }
+]
